@@ -1,38 +1,35 @@
-/*var firstname = "Yasir";
-var lastname = "Mohammed";
-
-var fullname =`${firstname} ${lastname}`;
-
-var location= "Vijayawada";
-var email="mdyasir4145@gmail.com";
-
-console.log(`${fullname} from ${location}`)
-console.log(`My email is ${email}`)
-
-// Arithmetic operators
-x=6;
-y=2;
-console.log (`The addition of two variables is ${x+y}`) // Addition
-console.log (`The subtraction of two variables is ${x-y}`) // Subtraction
-console.log (`The multiplication of two variables is ${x*y}`) // Multiplication
-console.log (`The division of two variables is ${x/y}`) // Division
-console.log (`The modulus of two variables is ${x%y}`) // Modulus
-
-// Comparision operators
-a= typeof 10==10
-b= typeof "yasir"=="yasir" 
-//It will be false. because, typeof"yasir" is string on the left side. on the right side it is "yasir". so, it is false.
-
-console.log(`It is ${a}`)
-console.log(`It is ${b}`)
+/*
+Create a object to deposit money {accountnumber, balance}
+@Parameter = number
+@Parameter = initialbalance
+@Return = accountnumber: number, balance: initialbalance
 */
-
-
-var x="Mohammed Yasir Arafath";
-i=9;
-while(i<x.length){
-   console.log(x[i]);
-   i++
+function CreatingAccount(number, initialbalance){
+   var account ={
+       accountnumber: number,
+       balance: initialbalance
+  }
+  return account
+  
 }
-console.log(x.length);
-//How to add another variable with letter y to check the final length
+var abc = CreatingAccount(12345, 122)
+console.log(abc)
+
+/*
+To withdraw ammount from existing amount. 
+ONLY if the withdrawable amount is less than existing balance else `Insufficient balance`.
+
+@Parameter : account object {accountnumber, balance}
+@Parameter : withdrawn 
+@Return : account.balance = account.balance - withdrawn
+*/
+function Withdrawing(account, withdrawn) {
+   if (account.balance > withdrawn) {
+       account.balance = account.balance - withdrawn;
+       console.log(`${withdrawn} is debited from your account. New balance is ${account.balance}.`);
+   } else {
+       console.log("Insufficient balance.");
+   }
+}
+
+Withdrawing(abc, 22);
